@@ -17,26 +17,24 @@ void solve() {
             max1 = x;
         }
         else if (x > max2) {
-            max2 = x;    // Chỉ cập nhật số lớn nhì
+            max2 = x;    
         }
-
-        // 2. Cập nhật top 2 số nhỏ nhất
         if (x < min1) {
-            min2 = min1; // Đẩy số nhỏ nhất cũ lên thành số nhỏ nhì
-            min1 = x;    // Cập nhật kỷ lục số nhỏ nhất mới
+            min2 = min1; 
+            min1 = x;    
         }
         else if (x < min2) {
-            min2 = x;    // Chỉ cập nhật số nhỏ nhì
+            min2 = x;  
         }
     }
 
-    // Kịch bản 1: Để 1 mảng rỗng
+    
     long long case1 = max1 - min1;
 
-    // Kịch bản 2: Chia làm 2 mảng
+  
     long long case2 = (max1 + max2) - (min1 + min2);
 
-    // In ra kết quả lớn nhất
+ 
     cout << max(case1, case2) << "\n";
 }
 
