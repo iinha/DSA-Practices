@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="14. Count the number of nodes with values ​​in the range [lo, hi].vcxproj" />
+</Solution>
