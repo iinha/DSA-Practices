@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="06. Consecutive subsequences have a sum equal to K.vcxproj" />
+</Solution>
