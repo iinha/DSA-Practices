@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="07. Count the number of vertices in the connected component containing a given vertex.vcxproj" />
+</Solution>
