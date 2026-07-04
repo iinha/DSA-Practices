@@ -1,20 +1,82 @@
-// Combination of BST and Hash Table.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <string>
+#include <vector>
+#include <chrono>
+#include <unordered_map>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+
+
+struct BSTNode {
+    long long code;
+    string name;
+    BSTNode* left, * right;
+    BSTNode(long long c, const string& n) : code(c), name(n), left(nullptr), right(nullptr) {}
+};
+
+class StudentStore {
+public:
+    void insertBST(long long code, const string& name);
+    void findBST(long long code, bool& out_found, string& out_name) const;
+    void buildHashFromBST();
+    void findHash(long long code, bool& out_found, string& out_name) const;
+
+private:
+    BSTNode* root = nullptr;
+    unordered_map<long long, string> table;
+
+    void inorder(BSTNode* node);
+};
+
+// Implement all StudentStore methods below (use StudentStore::<method> syntax):
+//   insertBST(code, name)              - insert into BST (no rebalance needed)
+//   findBST(code, out_found, out_name) - lookup in BST; set out_found/out_name
+//   buildHashFromBST()                 - inorder traverse BST and fill the hashmap
+//   findHash(code, out_found, out_name)- lookup in hashmap; set out_found/out_name
+//   inorder(node)                      - (private helper) inorder traversal filling the hashmap
+
+
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n;
+    cin >> n;
+
+    StudentStore store;
+    for (int i = 0; i < n; i++) {
+        long long code;
+        string name;
+        cin >> code >> name;
+        store.insertBST(code, name);
+    }
+    store.buildHashFromBST();
+
+    int q;
+    cin >> q;
+    vector<long long> queries(q);
+    for (int i = 0; i < q; i++) cin >> queries[i];
+
+    auto t0 = chrono::high_resolution_clock::now();
+    long long bstChecksum = 0;
+    for (long long c : queries) {
+        bool found; string name;
+        store.findBST(c, found, name);
+        if (found) bstChecksum += (long long)name.size();
+    }
+    auto t1 = chrono::high_resolution_clock::now();
+
+    for (long long c : queries) {
+        bool found; string name;
+        store.findHash(c, found, name);
+        cout << (found ? name : string("NOT_FOUND")) << "\n";
+    }
+    auto t2 = chrono::high_resolution_clock::now();
+
+    cerr << "BST  total: " << chrono::duration_cast<chrono::microseconds>(t1 - t0).count() << " us\n";
+    cerr << "Hash total: " << chrono::duration_cast<chrono::microseconds>(t2 - t1).count() << " us\n";
+    cerr << "BST checksum (sanity): " << bstChecksum << "\n";
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
