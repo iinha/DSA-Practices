@@ -9,6 +9,12 @@ struct SinhVien {
 
 SinhVien sv[100005];
 
+int linearSearch(SinhVien sv[], int n, int x) {
+    for (int i = 0; i < n; i++) {
+        if (sv[i].id == x) return i;
+    }
+    return -1;
+}
 
 int main() {
     ios::sync_with_stdio(false);
