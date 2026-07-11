@@ -3,6 +3,23 @@ using namespace std;
 
 int a[100005];
 
+int binarySearch(int a[], int n, int x) {
+    int l = 0;
+    int r = n-1;
+    while (l <= r) {
+        int m = l + (r - l) / 2;
+        if (x<a[m]) {
+            r = m - 1;
+        }
+        else if (x> a[m]) {
+            l = m + 1;
+        }
+        else{
+            return 1;
+        }
+    }
+    return 0;
+}
 
 int main() {
     ios::sync_with_stdio(false);
