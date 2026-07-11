@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="18. Check if a binary tree is a BST.vcxproj" />
+  <Project Path="18. Check if a binary tree is a BST.vcxproj" Id="b9453c56-0b68-4262-aa27-80f46628bedf" />
 </Solution>

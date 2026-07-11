@@ -46,8 +46,13 @@ Node* buildFromLevelOrder(const vector<string>& tokens) {
     }
     return root;
 }
-int isValidBST(Node* root){
+int isValidBST(Node* root, Node* minNode = NULL, Node* maxNode = NULL) {
+    if (root == NULL) return 1;
 
+    if (minNode != NULL && root->data <= minNode->data) return 0;
+    if (maxNode != NULL && root->data >= maxNode->data) return 0;
+
+    return isValidBST(root->left, minNode, root) && isValidBST(root->right, root, maxNode);
 }
 int main() {
     int k;
