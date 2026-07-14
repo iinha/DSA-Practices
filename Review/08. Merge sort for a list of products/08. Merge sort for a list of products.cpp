@@ -8,7 +8,7 @@ struct SanPham {
     int gia;
 };
 
-bool compare(const SanPham& a, const SanPham& b) {
+bool Compare(const SanPham& a, const SanPham& b) {
     if (a.gia != b.gia) {
         return a.gia < b.gia; 
     }
@@ -32,7 +32,7 @@ void merge(SanPham* a, int left, int mid, int right) {
     int i = 0, j = 0, k = left;
 
     while (i < n1 && j < n2) {
-        if (compare(L[i], R[j])) {
+        if (Compare(L[i], R[j])) {
             a[k++] = L[i++];
         }
         else {
@@ -60,7 +60,6 @@ void mergeSort(SanPham* a, int left, int right) {
 
     mergeSort(a, left, mid);
     mergeSort(a, mid + 1, right);
-
     merge(a, left, mid, right);
 }
 
