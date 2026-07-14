@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="08. Merge sort for a list of products.vcxproj" />
+  <Project Path="08. Merge sort for a list of products.vcxproj" Id="a3a3e881-46dd-44ce-b05c-f9f3d9a6d56b" />
 </Solution>
