@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="02. The first non-duplicate element.vcxproj" />
+  <Project Path="02. The first non-duplicate element.vcxproj" Id="e660c902-4ca4-4e00-abf1-159420d84ff6" />
 </Solution>

@@ -6,6 +6,15 @@ using namespace std;
 
 
 long long firstNonRepeating(const vector<long long>& arr) {
+    unordered_map <long long, int> count;
+    for (const long long& num : arr) {
+        count[num]++;
+    }
+    for (const long long& num : arr) {
+        if (count[num] == 1)
+            return num;
+    }
+    return -1;
 }
 
 int main() {
