@@ -7,6 +7,18 @@ using namespace std;
 
 
 vector<long long> majorityNK(const vector<long long>& arr, int k) {
+    unordered_map <long long, int> count;
+    for (const auto& num : arr) {
+        count[num]++;
+    }
+    vector <long long> result;
+    int p = arr.size() / k;
+    for (const auto&m:count){
+        if (m.second > p) {
+            result.push_back(m.first);
+        }
+    }
+    return result;
 }
 
 int main() {

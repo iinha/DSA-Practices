@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="08. An element appearing more than n div k times.vcxproj" />
+  <Project Path="08. An element appearing more than n div k times.vcxproj" Id="bf5f087e-0862-4e79-be0f-a3346c6f9363" />
 </Solution>
