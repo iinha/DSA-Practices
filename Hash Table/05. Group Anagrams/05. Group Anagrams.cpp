@@ -8,6 +8,21 @@ using namespace std;
 
 
 vector<vector<string>> groupAnagrams(const vector<string>& words) {
+    unordered_map<string, vector<string>> anagramsgroup;
+    for (const string & word : words) {
+        string sortedword = word;
+        sort(sortedword.begin(), sortedword.end());
+        anagramsgroup[sortedword].push_back(word);
+    }
+    vector<vector <string>> result;
+    for (auto& entry : anagramsgroup) {
+        sort(entry.second.begin(), entry.second.end());
+        result.push_back(entry.second);
+    }
+    sort(result.begin(), result.end(), [](const vector<string>& a, const vector<string>& b) {
+        return a[0] < b[0];
+        });
+    return result;
 }
 
 int main() {
