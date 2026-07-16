@@ -13,11 +13,12 @@ vector<long long> majorityNK(const vector<long long>& arr, int k) {
     }
     vector <long long> result;
     int p = arr.size() / k;
-    for (const auto&m:count){
+    for (const auto& m : count){
         if (m.second > p) {
             result.push_back(m.first);
         }
     }
+    sort(result.begin(), result.end());
     return result;
 }
 
