@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="03. Anagram Check.vcxproj" />
+  <Project Path="03. Anagram Check.vcxproj" Id="308203ea-b6a3-4f83-9a05-10c12534571d" />
 </Solution>
