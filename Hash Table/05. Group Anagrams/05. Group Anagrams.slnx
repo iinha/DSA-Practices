@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="05. Group Anagrams.vcxproj" />
+  <Project Path="05. Group Anagrams.vcxproj" Id="f3263b62-41d9-4e03-beb7-3613f31017c8" />
 </Solution>
