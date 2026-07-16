@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="04. Intersection and union of two linked lists.vcxproj" />
+  <Project Path="04. Intersection and union of two linked lists.vcxproj" Id="9542dd39-49f5-420b-a87f-e5e9ebaea81c" />
 </Solution>

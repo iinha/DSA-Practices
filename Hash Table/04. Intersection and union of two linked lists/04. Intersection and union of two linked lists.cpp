@@ -26,8 +26,39 @@ Node* buildList(const vector<long long>& vals) {
 //   intersectLists(a, b) -> intersection (unique, sorted asc) of two linked lists
 //   unionLists(a, b)     -> union (unique, sorted asc) of two linked lists
 
+vector<long long> intersectLists(Node* a, Node* b) {
+    unordered_set <long long> setA;
+    vector <long long> result;
+    while (a) {
+        setA.insert(a->val);
+        a = a->next;
+    }
+    while (b) {
+        if (setA.count(b->val))
+        {
+            result.push_back(b->val);
+            setA.erase(b->val);
+        }
+        b = b->next;
+    }
+    sort(result.begin(), result.end());
+    return result;
+}
 
-
+vector<long long> unionLists(Node* a, Node* b) {
+    unordered_set <long long> setB;
+    while (a) {
+        setB.insert(a->val);
+        a = a->next;
+    }
+    while (b) {
+        setB.insert(b->val);
+        b = b->next;
+    }
+    vector <long long> result(setB.begin(), setB.end());
+    sort(result.begin(), result.end());
+    return result;
+}
 void printVec(const vector<long long>& v) {
     for (size_t i = 0; i < v.size(); i++) {
         if (i) cout << " ";
