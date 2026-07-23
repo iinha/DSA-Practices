@@ -1,6 +1,3 @@
-
-
-
 #include <iostream>
 using namespace std;
 
@@ -38,6 +35,12 @@ void insertNode(Node*& root, Node* node) {
     insertNode(root->right, node);
 }
 
+int height(Node* root) {
+    if (!root) return -1;
+    int a = height(root->left);
+    int b = height(root->right);
+    return (a > b ? a : b) + 1;
+}
 
 int main() {
     ios::sync_with_stdio(false);
