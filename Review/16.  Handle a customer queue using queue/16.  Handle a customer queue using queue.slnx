@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="16.  Handle a customer queue using queue.vcxproj" />
+  <Project Path="16.  Handle a customer queue using queue.vcxproj" Id="9d7ad885-a275-49a1-aeb2-94c3833eea3f" />
 </Solution>
