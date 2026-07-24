@@ -7,6 +7,46 @@ using namespace std;
 //   void enqueue(const string& name) - add a document name to the back
 //   bool emptyQueue()                - return true if the queue is empty
 //   string dequeue()                 - remove and return the front document name (queue is non-empty)
+struct node {
+    string data;
+    node* next;
+};
+
+node* head = nullptr;
+node* tail = nullptr;
+
+void enqueue(const string& name) {
+    node* newnode = new node();
+    newnode->data = name;
+    newnode->next = nullptr;
+
+    if (head == nullptr) {
+        head = newnode;
+        tail = newnode;
+    }
+    else {
+        tail->next = newnode;
+        tail = newnode;
+    }
+}
+
+bool emptyQueue() {
+    return head == nullptr;
+}
+
+string dequeue() {
+    if (head != nullptr) {
+        string val = head->data;
+        node* temp = head;
+        head = head->next;
+        if (head == nullptr) {
+            tail = nullptr;
+        }
+        delete temp;
+        return val;
+    }
+    return "";
+}
 
 int main() {
     ios::sync_with_stdio(false);

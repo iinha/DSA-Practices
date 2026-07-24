@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="17. Printer simulation using queue.vcxproj" />
+  <Project Path="17. Printer simulation using queue.vcxproj" Id="017add5f-3ad8-454a-bbe6-094b355b2421" />
 </Solution>
